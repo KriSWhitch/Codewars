@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Every Digit</title>
+</head>
+<body>
+
+    <script>
+        'use strict';
+        function squareDigits(num) { 
+            let digitsArray = [];
+            let base = 10;
+            let currentNumber = num;
+            do {
+                let baseShiftedNumber = Math.floor (currentNumber / base);
+                let diff = currentNumber - (baseShiftedNumber * base);
+                digitsArray.unshift(diff);
+                currentNumber = baseShiftedNumber;
+            } while (currentNumber > 0)
+            
+            let sum = '';
+
+            for (let i = 0; i < digitsArray.length; i++) {
+                sum = sum + Math.pow(digitsArray[i], 2);
+            }
+            return Number(sum);
+         }
+    </script>
+</body>
+</html>
