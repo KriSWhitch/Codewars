@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate mean and concatenate string</title>
+</head>
+<body>
+    <script>
+        function mean(lst){
+            let avg = 0;
+            let digitsSum = 0;
+            let numOfDigits = 0;
+            let outString = "";
+            let output = [];
+            for (let i = 0; i < lst.length; i++) {
+              if (lst[i] === "0" ||lst[i] === "1" ||lst[i] === "2" ||lst[i] === "3" ||lst[i] === "4" ||lst[i] === "5" ||
+              lst[i] === "6" ||lst[i] === "7" ||lst[i] === "8" ||lst[i] === "9") {
+                let digit = Number(lst[i]);
+                digitsSum += digit;
+                numOfDigits ++;
+              } else {
+                outString += lst[i];
+              }
+              
+            }
+            avg = digitsSum / numOfDigits;
+            output[0] = avg;
+            output[1] = outString;
+            return output;
+        }
+        var lst = ["u", "6", "d", "1", "i", "w", "6", "s", "t", "4", "a", "6", "g", "1", "2", "w", "8", "o", "2", "0"];
+        console.log(mean(lst)); // [3.6, "udiwstagwo"]
+    </script>
+</body>
+</html>
