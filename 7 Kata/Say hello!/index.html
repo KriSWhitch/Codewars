@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Say hello!</title>
+</head>
+<body>
+    <script>
+        function greet(name) {
+            return (name === "" || name === null) ? null : `hello ${name}!`;
+          }
+        greet("Niks"); // "hello Niks!"
+        greet(null); // null
+    </script>
+</body>
+</html>
