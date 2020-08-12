@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get the Middle Character</title>
+</head>
+<body>
+    <script>
+        function getMiddle(s) {
+            let stringArray = s.split("");
+            if (stringArray.length % 2 == 0) {
+                return stringArray[stringArray.length / 2 - 1] + stringArray[(stringArray.length / 2)];
+            } else {
+                return stringArray[Math.ceil(stringArray.length / 2) - 1];
+            }
+        }
+        getMiddle("middle"); // dd
+    </script>
+</body>
+</html>
