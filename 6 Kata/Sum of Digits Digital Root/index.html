@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Digits Digital Root</title>
+</head>
+<body>
+    <script>
+
+      let task = (n) => {
+        let elArray = String(n);
+        elArray = elArray.split("");
+        let sum = 0;
+        elArray.forEach( el => {
+          sum += Number(el);
+        });
+        if (sum > 10) {
+          return digital_root(sum);
+        } else {
+          return sum;
+        }
+    }
+    
+    function digital_root(n) {
+        if (n < 10) {
+            return n;
+          }
+        return digital_root(task(n));
+    }
+
+        digital_root(16); // 7
+        digital_root(456); // 6
+    </script>
+</body>
+</html>
