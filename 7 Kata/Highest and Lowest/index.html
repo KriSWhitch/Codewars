@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highest and Lowest</title>
+</head>
+<body>
+    <script>
+        function highAndLow(numbers){
+            let numArray = numbers.split(" ");
+            let min = Number(numArray[0]);
+            let max = Number(numArray[0]);
+            numArray.forEach( num => {
+              if (Number(num) < min) min = Number(num);
+              if (Number(num) > max) max = Number(num);
+            });
+            return `${max} ${min}`;
+        }
+    </script>
+</body>
+</html>
