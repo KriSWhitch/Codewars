@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exes and Ohs</title>
+</head>
+<body>
+    <script>
+        function XO(str) {
+            let oCounter = 0, xCounter = 0;
+            let strArray = str.split("");
+            strArray.forEach(e => {
+              if (e.toLowerCase() == "o") oCounter++;
+              if (e.toLowerCase() == "x") xCounter++;
+            });
+            if (oCounter === xCounter) return true;
+            return false;
+        }
+        XO("xxOo"); // true
+    </script>
+</body>
+</html>
