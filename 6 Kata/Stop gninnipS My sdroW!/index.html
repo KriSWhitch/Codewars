@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop gninnipS My sdroW!</title>
+</head>
+<body>
+    <script>
+        function rev(str) {
+            return str.split('').reverse().join('')
+        };
+          
+        function spinWords(str){
+            let strArray = str.split(" ");
+            for(let i = 0; i < strArray.length; i++){
+              if (strArray[i].length > 4){
+                strArray[i] = rev(strArray[i]);
+              }
+            }
+            return strArray.join(' ');
+        }
+
+        spinWords("Seriously this is the last one"); // "ylsuoireS this is the last one"
+    </script>
+</body>
+</html>
