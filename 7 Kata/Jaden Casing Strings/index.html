@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaden Casing Strings</title>
+</head>
+<body>
+    <script>
+        String.prototype.toJadenCase = function () {
+            let strArray = this.split(" ");
+            let outArray = [];
+            for ( let i = 0; i < strArray.length; i++) {
+              let letters = strArray[i].split("");
+              letters[0] = letters[0].toUpperCase();
+              let word = "";
+              for (let j = 0; j < letters.length; j++ ) {
+                word += letters[j];
+              }
+              outArray[i] = word;
+            }
+            return outArray.join(" ");
+        };
+        
+        var str = "How can mirrors be real if our eyes aren't real";
+        str.toJadenCase(); // "How Can Mirrors Be Real If Our Eyes Aren't Real"
+    </script>
+</body>
+</html>

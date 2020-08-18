@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find The Parity Outlier</title>
+</head>
+<body>
+    <script>
+        function findOutlier(integers){
+            let evens = 0;
+            let evenNumber;
+            let odds = 0;
+            let oddNumber;
+            integers.forEach( el => {
+              if ( Math.abs(el) % 2 == 1) {
+                odds++;
+                oddNumber = el;
+              } else {
+                evens++;
+                evenNumber = el;
+              }
+            });
+            if (evens == 1) {
+              return evenNumber;
+            } else {
+              return oddNumber;
+            }
+        }
+
+        findOutlier([2,6,8,10,3]); // 3
+    </script>
+</body>
+</html>
