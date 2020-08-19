@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complementary DNA</title>
+</head>
+<body>
+    <script>
+        function DNAStrand(dna){
+            let strArray = dna.split("");
+            let outArray = "";
+            strArray.forEach( e => {
+              if ( e === "A") {
+                e = "T";
+              } else if ( e === "T") {
+                e = "A";
+              } else if ( e === "G") {
+                e = "C";
+              } else if ( e === "C") {
+                e = "G";
+              }
+              outArray += e;
+            });
+            return outArray;
+        }
+    </script>
+</body>
+</html>
