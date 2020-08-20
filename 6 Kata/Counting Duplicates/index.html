@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counting Duplicates</title>
+</head>
+<body>
+    <script>
+        function duplicateCount(text){
+            var items = text.toLowerCase().split(""),  // клонируем исходный массив
+                tested = [],            // список проверенных элементов
+                item,                   // один элемент
+                count = 0;              // кол-во элементов, имеющх дубли
+            while (items.length) {
+              // вырезаем первый элемент (что бы он нам больше не попадался)
+              item = items.shift();
+              // если его еще не проверяли
+              if (tested.indexOf(item) === -1) {
+                // добавляем в список
+                tested.push(item);
+                // и ищем дубли
+                if (items.indexOf(item) >= 0) {
+                  count++;
+                }
+              }
+            }
+            return count;
+        }
+    </script>
+</body>
+</html>
