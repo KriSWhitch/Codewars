@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Filtering</title>
+</head>
+<body>
+    <script>
+        function filter_list(l) {
+            for (let i = 0; i < l.length; i++){
+              if ( typeof (l[i]) === 'string' ) {
+                delete l.splice(i,1);
+                filter_list(l);
+              }
+            }
+            return l;
+        }
+
+        filter_list([1,2,'aasf','1','123',123]); // [1,2,123]
+    </script>
+</body>
+</html>
