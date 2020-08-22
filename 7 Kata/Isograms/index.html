@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isograms</title>
+</head>
+<body>
+    <script>
+        function isIsogram(str){
+            let strArray = str.split("");
+            for (let i = 0; i < strArray.length; i++) {
+              for (let j = 0; j < strArray.length; j++) {
+                if (i === j) continue;
+                if (strArray[i].toLowerCase() === strArray[j].toLowerCase()) return false;
+              }
+            }
+            return true;
+        }
+
+        isIsogram("isogram"); // true 
+        isIsogram("aba"); // false "same chars may not be adjacent"
+    </script>
+</body>
+</html>
