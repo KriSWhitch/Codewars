@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicate Encoder</title>
+</head>
+<body>
+    <script>
+        function duplicateEncode(word){
+            let input = word.toLowerCase();
+            let result = ""
+            for(let i=0; i<input.length;i++){
+              for( let j = 0; j < input.length; j++) {
+                 if (i === j) continue;
+                 if (input.charAt(i) === input.charAt(j)) {
+                   result+=')';
+                   break;
+                 }
+              }
+              if ( result.charAt(i) !== ')') result += '(';
+            }
+            return result;
+        }
+        
+        duplicateEncode("Success"); // ")())())"
+    </script>
+</body>
+</html>

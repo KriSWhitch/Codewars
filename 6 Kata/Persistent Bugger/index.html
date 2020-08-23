@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persistent Bugger</title>
+</head>
+<body>
+    <script>
+        let counter = 0;
+
+        function computation(num) {
+            if (num.toString().split("").length === 1) {
+                return num;    
+            }
+            let numArray = num.toString().split("");
+            let result = Number(numArray[0]);
+            for (let i = 1; i < numArray.length; i++) {
+                result *= numArray[i];
+            }
+            counter++;
+            computation(result);
+        }
+
+        function persistence(num) {
+            counter = 0;
+            if (num.toString().split("").length === 1) {
+                return 0;    
+            } else {
+                computation(num);
+            }
+            return counter;
+        }
+
+        persistence(999); // 4
+    </script>
+</body>
+</html>
