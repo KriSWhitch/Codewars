@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take a Ten Minute Walk</title>
+</head>
+<body>
+    <script>
+        function isValidWalk(walk) {
+            if ( walk.length != 10) return false;
+            let x = 0;
+            let y = 0;
+            for ( let i = 0; i < walk.length; i++) {
+              if (walk[i] === 'n') y++
+              else if (walk[i] === 's') y--
+              else if (walk[i] === 'w') x--
+              else if (walk[i] === 'e') x++;
+            }
+            if (x === 0 && y === 0) return true
+            else return false;
+        }
+
+        isValidWalk(['n','s','n','s','n','s','n','s','n','s']); // 'should return true'
+    </script>
+</body>
+</html>
