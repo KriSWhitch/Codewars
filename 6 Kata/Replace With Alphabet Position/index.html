@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace With Alphabet Position</title>
+</head>
+<body>
+    <script>
+        function alphabetPosition(text) {
+            let strArray = text.split("");
+            let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+            let outArray = [];
+            for (let i = 0; i < strArray.length; i++) {
+              for (let j = 0; j < alphabet.length; j++) {
+                if (strArray[i].toLowerCase() === alphabet[j] ) {
+                  outArray.push(j+1);
+                }
+              }
+            }
+            return outArray.join(" ");
+        }
+    </script>
+</body>
+</html>
