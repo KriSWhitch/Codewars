@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique In Order</title>
+</head>
+<body>
+    <script>
+        var uniqueInOrder=function(iterable){
+            if (iterable.length === 0) return [];
+            if (typeof(iterable) === 'string') iterable = iterable.split("");
+            let tmp = iterable[0];
+            let outArray = [];
+            outArray.push(tmp);
+            for (let i = 1; i < iterable.length; i++) {
+                if (iterable[i] != tmp) {
+                outArray.push(iterable[i]);
+                tmp = iterable[i];
+                }
+            }
+            return outArray;
+        }
+    </script>
+</body>
+</html>
