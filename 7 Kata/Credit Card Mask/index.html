@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Mask</title>
+</head>
+<body>
+    <script>
+        // return masked string
+        function maskify(cc) {
+            let numArray = cc.toString().split("");
+            let outArray = [];
+            for (let i = numArray.length - 1; i >= 0 ; i--) {
+            if (outArray.length < 4) {
+                outArray.unshift(numArray[i]);
+            } else {
+                outArray.unshift('#');
+            }
+            }
+            return outArray.join("");
+        }
+    </script>
+</body>
+</html>
