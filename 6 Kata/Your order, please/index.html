@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your order, please</title>
+</head>
+<body>
+    <script>
+        function order(words){
+            words = words.split(" ");
+            let word = "";
+            let numbers = "123456789".split("");
+            let outArray = [];
+            for (let k = 0; k < numbers.length; k++) {
+              for ( let i = 0; i < words.length; i++ ) {
+                word = words[i].split("");
+                for (let j = 0; j < word.length; j++ ) {
+                  if (numbers[k] === word[j]) {
+                    outArray.push(word.join(""));
+                  } 
+                }
+              }
+            }
+            return outArray.join(" ");
+        }
+    </script>
+</body>
+</html>
