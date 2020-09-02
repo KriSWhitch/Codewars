@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkish Numbers, 0-99</title>
+</head>
+<body>
+    <script>
+        const getTurkishNumber = (num) => {
+            let soloNames = ["sıfır", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"];
+            let names = ["on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"];
+            let numArray = num.toString().split("");
+            let outString = [];
+            console.log(num);
+            if (numArray.length === 1) {
+              for (let i = 0; i < soloNames.length; i++ ) {
+                if (Number(numArray[0]) === i) outString.push(soloNames[i]);
+              }
+            } else if (numArray.length === 2 && Number(numArray[1]) !== 0) {
+                for (let j = 1; j <= names.length; j++ ) {
+                  if (Number(numArray[0]) === j) {
+                    outString.push(names[j-1]);
+                  } 
+                }
+                for (let k = 0; k < soloNames.length; k++ ) {
+                  if (Number(numArray[1]) === k) outString.push(soloNames[k]);
+                }
+            } else {
+                  for (let j = 1; j <= names.length; j++ ) {
+                    if (Number(numArray[0]) === j) {
+                      outString.push(names[j-1]);
+                    } 
+                  }
+            }
+            return outString.join(" ");
+        }
+    </script>
+</body>
+</html>
