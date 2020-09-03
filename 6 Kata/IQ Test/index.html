@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQ Test</title>
+</head>
+<body>
+    <script>
+        function iqTest(numbers){
+            let odds = 0;
+            let evens = 0;
+            let numArray = numbers.split(" ");
+            for ( let i = 0; i < numArray.length; i++ ) {
+              Number(numArray[i]) % 2 === 0 ? evens++ : odds++; 
+            }
+            if (odds > evens) {
+                for ( i = 0; i < numArray.length; i++ ) {
+                  if (Number(numArray[i]) % 2 === 0) return i+1;
+                }
+            } else if (evens > odds) {
+                for ( i = 0; i < numArray.length; i++ ) {
+                  if (Number(numArray[i]) % 2 === 1) return i+1;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
