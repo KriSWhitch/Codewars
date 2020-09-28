@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend or Foe?</title>
+</head>
+<body>
+    <script>
+        function friend(friends){
+            let outArray = [];
+            for ( let i = 0; i < friends.length; i++ ) {
+                if (friends[i].split("").length === 4) outArray.push(friends[i]);
+            }
+            return outArray;
+        }
+    </script>
+</body>
+</html>
